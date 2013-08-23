@@ -1,0 +1,21 @@
+<template name="blogNav">
+  <li><a href="{{pathFor 'blogOverview'}}">overview</a></li>
+  <li><a href="{{pathFor 'blogAdd'}}">add</a></li>
+</template>
+
+<template name="blogOverview">
+  <h1>overview</h1>
+  <ul>
+  {{#each this}}
+    <li>{{name}} - {{message}}</li>
+  {{/each}}
+  </ul>
+</template>
+
+<template name="edit">
+  edit
+</template>
+
+<template name="add">
+  add
+</template>

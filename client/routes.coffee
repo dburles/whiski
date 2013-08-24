@@ -1,5 +1,4 @@
-Router.map ->
-  @route 'home', path: '/', layout: 'layout'
-
+# Router.map ->
+#   @route 'home', path: '/'
 # Router.configure
 #   layout: 'layout'

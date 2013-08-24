@@ -1,6 +1,5 @@
-if Meteor.isClient
-#   Router.map ->
-#     @route 'whiski', 'path': '/whiski'
+Router.map ->
+  @route 'whiskiHome', 'path': '/whiski'
 
-  Router.configure
-    layout: 'whiskiLayout' # this needs to be specific to whiski routes
+if Meteor.isClient
+  Router.configure layout: "layout" # this needs to be specific to whiski routes

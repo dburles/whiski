@@ -7,15 +7,27 @@
   <h1>overview</h1>
   <ul>
   {{#each this}}
-    <li>{{name}} - {{message}}</li>
+    <li>{{name}} - {{message}} - <a href="{{pathFor 'blogEdit'}}">edit</a></li>
   {{/each}}
   </ul>
 </template>
 
-<template name="edit">
-  edit
+<template name="blogEdit">
+  <h2>edit</h2>
+  {{#with this}}
+  <form>
+    <input type="text" name="name" value="{{name}}">
+    <input type="text" name="message" value="{{message}}">
+    <input type="submit" value="save">
+  </form>
+  {{/with}}
 </template>
 
-<template name="add">
-  add
+<template name="blogAdd">
+  <h2>add</h2>
+  <form>
+    <input type="text" name="name">
+    <input type="text" name="message">
+    <input type="submit" value="add">
+  </form>
 </template>

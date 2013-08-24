@@ -1,9 +1,4 @@
-<head></head>
-<body>
-  
-</body>
-
-<template name="whiskiLayout">
+<template name="layout">
   <h1>whiski layout</h1>
   
   <nav>
@@ -11,4 +6,9 @@
   </nav>
 
   {{yield}}
+</template>
+
+<template name="whiskiHome">
+  <h2>whiski home</h2>
+  <a href="{{pathFor 'blogOverview'}}">go to blog</a>
 </template>

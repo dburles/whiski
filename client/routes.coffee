@@ -1,4 +1,7 @@
-# Router.map ->
-#   @route 'home', path: '/'
-# Router.configure
-#   layout: 'layout'
+Router.map ->
+  @route 'home',
+    controller: 'SiteController'
+    path: '/'
+
+@SiteController = RouteController.extend
+  layoutTemplate: 'layout'

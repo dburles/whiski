@@ -1,0 +1,31 @@
+<template name="whiskiLayout">
+  <h1>whiski layout</h1>
+  
+  <nav>
+    <ul>
+      <li><a href="{{pathFor 'whiskiHome'}}">Home</a></li>
+      <ul>
+        {{yield 'nav'}}
+      </ul>
+    </ul>
+  </nav>
+
+  {{yield}}
+</template>
+
+<template name="whiskiHome">
+  <h2>whiski home</h2>
+  <h3>installed modules:</h3>
+  <ul>
+    {{#each modules}}
+      <li>
+        <a href="{{pathFor route}}">{{name}}</a>
+        <ul>
+          <li>
+            author: {{author}}
+          </li>
+        </ul>
+      </li>
+    {{/each}}
+  </ul>
+</template>

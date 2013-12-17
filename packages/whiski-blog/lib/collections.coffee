@@ -1,1 +1,0 @@
-@Blogs = new Meteor.Collection 'blogs'

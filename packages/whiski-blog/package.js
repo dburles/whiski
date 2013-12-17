@@ -8,9 +8,11 @@ Package.on_use(function (api) {
   api.use('iron-router', ['client', 'server']);
   api.use('whiski', ['client', 'server']);
 
-  api.add_files('lib/client/whiski.coffee', 'client');
+  api.add_files('lib/client/whiski.js', 'client');
   api.add_files('lib/client/blog.html', 'client');
-  api.add_files('lib/client/routes.coffee', 'client');
-  api.add_files('lib/client/blog.coffee', 'client');
-  api.add_files('lib/collections.coffee', ['client', 'server']);
+  api.add_files('lib/client/routes.js', 'client');
+  api.add_files('lib/client/blog.js', 'client');
+  api.add_files('lib/collections.js', ['client', 'server']);
+
+  api.export('BlogController', 'client');
 });

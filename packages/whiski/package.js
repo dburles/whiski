@@ -8,8 +8,9 @@ Package.on_use(function (api) {
   api.use('iron-router', ['client', 'server']);
 
   api.add_files('lib/client/template.html', 'client');
-  api.add_files('lib/client/whiski.coffee', 'client');
-  api.add_files('lib/client/routes.coffee', 'client');
+  api.add_files('lib/client/whiski.js', 'client');
+  api.add_files('lib/client/routes.js', 'client');
 
+  api.export('WhiskiController', 'client');
   api.export('WhiskiInstalledModules', 'client');
 });

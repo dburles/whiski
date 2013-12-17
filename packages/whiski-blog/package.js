@@ -4,7 +4,6 @@ Package.describe({
 
 Package.on_use(function (api) {
   api.use('standard-app-packages', ['client', 'server']);
-  api.use('coffeescript', ['client', 'server']);
   api.use('iron-router', ['client', 'server']);
   api.use('whiski', ['client', 'server']);
 

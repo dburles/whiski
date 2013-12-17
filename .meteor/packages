@@ -8,7 +8,6 @@ autopublish
 insecure
 preserve-inputs
 iron-router
-coffeescript
 whiski
 whiski-blog
 stylus

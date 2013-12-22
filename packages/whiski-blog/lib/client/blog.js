@@ -1,27 +1,20 @@
-Template.blogEdit.events({
+Template.blogForm.events({
   'submit form': function(event, template) {
     event.preventDefault();
     
     var properties = {
-      name: $('input[name="name"]').val(),
-      message: $('input[name="message"]').val()
+      title: $('input[name="title"]').val(),
+      author: $('input[name="author"]').val(),
+      content: $('textarea[name="content"]').val()
     };
 
-    Blogs.update(this._id, { $set: properties });
+    Blogs.upsert(this._id, { $set: properties });
     Router.go('blogOverview');
   }
 });
 
-Template.blogAdd.events({
-  'submit form': function(event, template) {
-    event.preventDefault();
-
-    var properties = {
-      name: $('input[name="name"]').val(),
-      message: $('input[name="message"]').val()
-    };
-
-    Blogs.insert(properties);
-    Router.go('blogOverview');
+Template.blogOverview.events({
+  'click .remove': function() {
+    Blogs.remove(this._id);
   }
 });

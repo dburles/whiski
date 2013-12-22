@@ -1,4 +1,6 @@
 <template name="whiskiLayout">
+  {{> whiskiStyles}}
+
   <h1>whiski layout</h1>
   
   <nav>
@@ -10,7 +12,9 @@
     </ul>
   </nav>
 
-  {{yield}}
+  <div class="row">
+    <div class="col-md-8">{{yield}}</div>
+  </div>
 </template>
 
 <template name="whiskiHome">
@@ -28,4 +32,12 @@
       </li>
     {{/each}}
   </ul>
+</template>
+
+<template name="whiskiStyles">
+  <style>
+    body {
+      margin: 20px;
+    }
+  </style>
 </template>

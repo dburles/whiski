@@ -7,27 +7,33 @@
   <h2>blog overview</h2>
   <ul>
   {{#each this}}
-    <li>{{name}} - {{message}} - <a href="{{pathFor 'blogEdit'}}">edit</a></li>
+    <li>
+      <a href="{{pathFor 'blogEdit'}}\">{{title}}</a>
+      <ul>
+        <li>{{author}}</li>
+        <li>{{content}}</li>
+        <li><a class="remove" href="">[remove]</a></li>
+      </ul>
+    </li>
   {{/each}}
   </ul>
 </template>
 
-<template name="blogEdit">
-  <h2>edit</h2>
-  {{#with this}}
-  <form>
-    <input type="text" name="name" value="{{name}}">
-    <input type="text" name="message" value="{{message}}">
-    <input type="submit" value="save">
-  </form>
-  {{/with}}
-</template>
-
-<template name="blogAdd">
-  <h2>add</h2>
-  <form>
-    <input type="text" name="name">
-    <input type="text" name="message">
-    <input type="submit" value="add">
+<template name="blogForm">
+  <h2>Blog</h2>
+  <form role="form">
+    <div class="form-group">
+      <label for="name">Title</label>
+      <input type="text" class="form-control" name="title" value="{{title}}">
+    </div>
+    <div class="form-group">
+      <label for="name">Author</label>
+      <input type="text" class="form-control" name="author" value="{{author}}">
+    </div>
+    <div class="form-group">
+      <label for="content">Content</label>
+      <textarea name="content" class="form-control" cols="30" rows="10">{{content}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
   </form>
 </template>
